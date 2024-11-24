@@ -12,7 +12,6 @@ Agenda
       [Custom Exception](#custom-exception)
 
 ![Exception.png](..%2F..%2F..%2Fresources%2FException.png)
-
 ### Exceptions
 
 1. **Checked Exception** - compile time exceptions. checked at compile time — Example: IOException, SQLException
@@ -62,7 +61,6 @@ public int getPlayerScore(String playerFile) throws FileNotFoundException {
 ```
 
 ![throws.png](..%2F..%2F..%2Fresources%2Fthrows.png)
-
 #### try and catch keyword
 
 ```java

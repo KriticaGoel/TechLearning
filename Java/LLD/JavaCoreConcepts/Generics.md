@@ -165,7 +165,6 @@ public class App {
 ```
 
 ![withoutGeneric.png](..%2F..%2F..%2Fresources%2FwithoutGeneric.png)
-
 Solution:
 Add generic and use extends Child class to access all methods of parent and child
 

@@ -3,8 +3,8 @@ Annotations are used for the following purposes:
 1. **Information for the compiler** — Annotations can be used by the compiler to detect errors or suppress warnings.
 2. **Compile-time and deployment-time processing** — Software tools can process annotation information to generate code,
    XML files, and so forth.
-   ![Annotation.png](..%2F..%2F..%2Fresources%2FAnnotation.png)
 
+![Annotation.png](..%2F..%2F..%2Fresources%2FAnnotation.png)
 ### Categories of Annotations
 
 Annotations can be divided into the following categories:

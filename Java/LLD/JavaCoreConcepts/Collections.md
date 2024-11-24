@@ -17,11 +17,9 @@
     * [Comparison of List and Set](#comparison-of-list-and-set)
 
 ![Topics to be covered.png](..%2F..%2F..%2Fresources%2FTopics%20to%20be%20covered.png)
-
 ### Collections
 
 ![CollectionFramework.png](..%2F..%2F..%2Fresources%2FCollectionFramework.png)
-
 #### Common methods of Collections:
 
 * **add(E element)** - inserts the specified element to the collection
