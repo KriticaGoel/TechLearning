@@ -154,9 +154,8 @@ The @Path annotation defines the URI path for a resource class or method. It map
 “In Spring, I use @RestController to create RESTful web services. I annotate methods with @RequestMapping or @GetMapping/@PostMapping to define endpoints, and Spring handles request mapping, serialization, and deserialization automatically.”
 
 
-Here are some important REST API coding interview questions and their answers.
+34. How would you design a simple REST API endpoint in Java to return a list of users?
 
-How would you design a simple REST API endpoint in Java to return a list of users?
 Using Spring Boot, you can create a simple REST endpoint as follows:
 
 @RestController
@@ -175,7 +174,8 @@ public class UserController {
 
 }
 
-How would you handle pagination in a REST API that returns a list of items?
+35. How would you handle pagination in a REST API that returns a list of items?
+
 You can implement pagination with query parameters for page and size:
 
 @GetMapping(“/items”)
@@ -186,7 +186,8 @@ public List<Item> getItems(@RequestParam int page, @RequestParam int size) {
 
 }
 
-How would you implement an authentication mechanism for a REST API using JWT in Java?
+36. How would you implement an authentication mechanism for a REST API using JWT in Java?
+
 In Spring Security, JWT can be implemented by creating a filter for request validation:
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -211,7 +212,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 }
 
-How would you implement an API endpoint to update a user resource in Java REST API?
+37. How would you implement an API endpoint to update a user resource in Java REST API?
+
 You can implement the PUT method to update an existing resource like this:
 
 @PutMapping(“/users/{id}”)
@@ -222,35 +224,24 @@ public User updateUser(@PathVariable long id, @RequestBody User userDetails) {
 
 }
 
-Spring REST API Interview Questions
-Let’s take a look at some Spring Boot REST API interview questions and their answers.
+38. How do you handle CORS in a Spring Boot REST API?
 
-How do you handle CORS in a Spring Boot REST API?
 CORS (Cross-Origin Resource Sharing) can be handled by adding the @CrossOrigin annotation to a controller or method in Spring Boot. You can also configure global CORS settings using a WebMvcConfigurer bean for more control.
 
-What is the role of @RestController in Spring Boot?
+39. What is the role of @RestController in Spring Boot?
+
 @RestController is a specialized version of @Controller that combines @Controller and @ResponseBody. It simplifies the creation of RESTful web services by automatically serializing return objects into JSON or XML.
 
-How can you validate request body data in a Spring Boot REST API?
+40. How can you validate request body data in a Spring Boot REST API?
+
 Spring Boot provides validation annotations like @NotNull, @Size, and @Min. These can be used in conjunction with @Valid or @Validated to validate incoming request data in the controller methods before processing.
 
-.NET Core REST API Interview Questions
-Here are some important .NET REST API interview questions and their answers.
+41. What is REST Assured, and how is it used for API testing?
 
-How do you implement authentication in a .NET Core REST API?
-In .NET Core, authentication can be implemented using JWT tokens. The AddJwtBearer() method is used in the ConfigureServices to configure token validation. Tokens are then sent in the Authorization header of requests for authentication.
-
-How can you handle exceptions globally in a .NET Core REST API?
-See also  Top 15+ PySpark Interview Questions and Answers (2024)
-Global exception handling in .NET Core can be done by using middleware. The UseExceptionHandler() method is used in the Configure method to catch unhandled exceptions and return a standardized error response.
-
-Interview Questions on REST Assured
-These are some commonly-asked REST Assured API interview questions and their answers.
-
-What is REST Assured, and how is it used for API testing?
 REST Assured is a Java library for testing RESTful APIs. It simplifies sending HTTP requests, validating responses, and extracting data from JSON or XML responses. It is widely used for automating API tests with minimal code.
 
-How can you extract a value from a JSON response in REST Assured?
+42. How can you extract a value from a JSON response in REST Assured?
+
 To extract a value from a JSON response:
 
 String value = given()
@@ -267,10 +258,9 @@ String value = given()
 
                    .getString(“key”);
 
-REST API Automation Interview Questions
-Here are some important REST Assured API automation interview questions and their answers.
 
-How do you handle authentication in REST API automation using REST Assured?
+43. How do you handle authentication in REST API automation using REST Assured?
+
 REST Assured supports various authentication methods like basic authentication and OAuth. For basic auth, you can use:
 
 given()
@@ -285,7 +275,8 @@ given()
 
     .statusCode(200);
 
-How do you automate the testing of different HTTP methods using REST Assured?
+44. How do you automate the testing of different HTTP methods using REST Assured?
+
 REST Assured supports all HTTP methods like GET, POST, PUT, DELETE. Example for PUT:
 
 given()
@@ -302,80 +293,3 @@ given()
 
     .statusCode(200);
 
-Python REST API Interview Questions
-Here are some Python REST interview questions and answers.
-
-How do you handle exceptions in a Python REST API using Flask?
-In Flask, exceptions can be handled using the @app.errorhandler decorator to catch specific errors. You can return custom JSON responses with appropriate status codes for different exceptions, ensuring better error management.
-
-How do you make a GET request to an external API in Python using Flask?
-In Flask, you can use the requests library to make a GET request to an external API. For example:
-
-import requests
-
-response = requests.get(‘https://api.example.com/data’)
-
-data = response.json()
-
-Also Read - Flask vs Django: Difference Between Flask and Django
-REST API Interview Questions C#
-Here are some C# REST interview questions and answers.
-
-How do you secure a REST API in C# using JWT?
-In C#, you can secure a REST API by using JWT authentication. After issuing a JWT token during login, the token is included in the Authorization header of requests. The server validates the token using middleware before processing the request.
-
-How do you implement logging in a C# REST API?
-In C#, logging can be implemented using the ILogger interface. By injecting ILogger into controllers or services, you can log important events, errors, or debug information. You can configure logging in the Startup.cs file.
-
-REST API Django Interview Questions
-Here are some REST interview questions and answers on REST API Django.
-
-How do you serialize data in Django REST Framework?
-In Django REST Framework, data is serialized using the serializers.Serializer class. You define fields, such as CharField, IntegerField, and use serializer.is_valid() to validate and serializer.data to access the serialized output.
-
-How do you authenticate users in Django REST Framework?
-In Django REST Framework, authentication can be managed using TokenAuthentication, SessionAuthentication, or BasicAuthentication. You enable authentication by adding ‘DEFAULT_AUTHENTICATION_CLASSES’ in settings.py and using @authentication_classes in views for finer control.
-
-Also Read - Top 40 Django Interview Questions Answers (2024)
-REST API Questions MCQs
-You might also come across REST services interview questions in MCQ form. Here are some common questions and their answers.
-
-What HTTP status code is returned when a resource is created successfully?
-a) 200
-b) 201
-c) 404
-d) 500
-
-Answer: b) 201
-
-Which of the following is true about REST?
-a) REST uses XML exclusively for data formatting
-b) REST is an architectural style, not a protocol
-c) REST requires strict security protocols
-d) REST can only work over HTTPS
-
-Answer: b) REST is an architectural style, not a protocol
-
-Which HTTP method is used to retrieve data from a server?
-a) POST
-b) GET
-c) PUT
-d) DELETE
-
-Answer: b) GET
-
-What does the “PUT” HTTP method do in a RESTful API?
-a) Creates a new resource
-b) Retrieves a resource
-c) Updates an existing resource
-d) Deletes a resource
-
-Answer: c) Updates an existing resource
-
-In REST, what is the purpose of a “Resource”?
-a) A collection of all API endpoints
-b) The server processing the requests
-c) A representation of data that can be accessed or manipulated
-d) A security protocol
-
-Answer: c) A representation of data that can be accessed or manipulated
