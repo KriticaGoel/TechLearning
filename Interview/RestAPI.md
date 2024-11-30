@@ -1,30 +1,30 @@
-1. What is a REST API?
-
+1. **What is a REST API?** 
+    
 A REST API (Representational State Transfer) is an architectural style for building web services that use HTTP methods to access and manage resources. It guarantees stateless communication and supports JSON, XML, and other formats.
 
-2. What are the main HTTP methods used in REST APIs?
+2. **What are the main HTTP methods used in REST APIs?**
 
 This is one of the most important interview questions on REST web services.
 
 The main HTTP methods are GET (read data), POST (create data), PUT (update data), and DELETE (remove data).
 
-3. What is statelessness in REST?
+3. **What is statelessness in the REST?**
 
 Statelessness means each request from the client to the server must contain all necessary information. The server does not store any client context between requests.
 
-4. What is a resource in REST?
+4. **What is a resource in the REST?**
 
 A resource is any piece of data or information identified by a unique URI, such as a user profile, image, or document.
 
-5. What is JSON, and why is it used in REST APIs?
+5. **What is JSON, and why is it used in REST APIs?**
 
 JSON (JavaScript Object Notation) is a lightweight data interchange format. It is easy for humans to read and write and is widely used in REST APIs for data exchange.
 
-6. What is the purpose of HTTP status codes?
+6. **What is the purpose of HTTP status codes?**
 
 HTTP status codes indicate the outcome of a request. For example, 200 means success, 404 means not found, and 500 indicates a server error.
 
-7. What is REST API integration?
+7. **What is REST API integration?**
 
 REST API integration connects two software systems to allow them to exchange data using RESTful principles and HTTP methods.
 
