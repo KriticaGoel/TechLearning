@@ -28,27 +28,27 @@ HTTP status codes indicate the outcome of a request. For example, 200 means succ
 
 REST API integration connects two software systems to allow them to exchange data using RESTful principles and HTTP methods.
 
-8. What is versioning in REST APIs?
+8. **What is versioning in REST APIs?**
 
 Versioning allows API providers to make changes without breaking existing clients. It is often managed by including a version number in the URL, like /v1/users.
 
-9. What is HATEOAS in REST APIs?
+9. **What is HATEOAS in REST APIs?**
 
 HATEOAS (Hypermedia as the Engine of Application State) is a REST principle where responses include links to related actions. It allows clients to navigate the API dynamically without hard-coding endpoints.
 
-10. How do you handle rate limiting in REST APIs?
+10. **How do you handle rate limiting in REST APIs?**
 
 Rate limiting controls the number of requests a client can make to an API within a set period. It prevents overloading and abuse by using strategies like fixed windows or token buckets.
 
-11. What is idempotency, and why is it important in REST APIs?
+11. **What is idempotency, and why is it important in REST APIs?**
 
 Idempotency means that making the same request multiple times will have the same effect as making it once. It is crucial for methods like PUT and DELETE to guarantee consistent results.
 
-12. How do you handle pagination in REST APIs?
+12. **How do you handle pagination in REST APIs?**
 
 Pagination manages large sets of data by dividing responses into smaller chunks. It can be implemented using query parameters like ?page=2&limit=10 or ?offset=20&count=10.
 
-13. What are some key security practices for REST APIs?
+13. **What are some key security practices for REST APIs?**
 
 Common security practices include –
 
@@ -57,21 +57,21 @@ Common security practices include –
 * Implementing authentication and authorization (e.g., OAuth 2.0)
 * And protecting against common attacks like SQL injection and XSS
 
-14. What are the pros and cons of using REST APIs?
+14. **What are the pros and cons of using REST APIs?**
 
 Pros: REST is simple, stateless, and widely adopted with flexible data formats.
 
 Cons: It can be less efficient for complex operations and doesn’t support real-time communication as well as WebSockets.
 
-15. What is the role of caching in REST APIs?
+15. **What is the role of caching in REST APIs?**
 
 Caching reduces the load on the server and speeds up responses by storing copies of responses. REST APIs use headers like Cache-Control to define caching rules.
 
-16. How do you manage error handling in REST APIs?
+16. **How do you manage error handling in REST APIs?**
 
 REST APIs use HTTP status codes (e.g., 400 for bad requests, 401 for unauthorized access) and provide detailed error messages in the response body for better clarity.
 
-17. How do you design REST APIs for high performance?
+17. **How do you design REST APIs for high performance?**
 
 High-performance REST APIs can be designed using techniques like
 
@@ -80,11 +80,11 @@ High-performance REST APIs can be designed using techniques like
 * Minimizing database calls
 * And optimizing query structures with efficient indexing
 
-18. What are best practices for REST API documentation?
+18. **What are best practices for REST API documentation?**
 
 Good documentation includes comprehensive details of endpoints, methods, request/response examples, and error codes. Tools like Swagger/OpenAPI make it easier to create interactive API documentation.
 
-19. How do you handle REST API versioning when dealing with breaking changes?
+19. **How do you handle REST API versioning when dealing with breaking changes?**
 
 Versioning strategies include –
 
@@ -93,7 +93,7 @@ Versioning strategies include –
 * Or query parameter versioning (?version=2)
 * This helps maintain backward compatibility.
 
-20. What is the difference between REST and SOAP?
+20. **What is the difference between REST and SOAP?**
 
 REST is an architectural style using HTTP and lightweight data formats like JSON. SOAP is a protocol that uses XML and offers stricter standards. REST is simpler and faster, while SOAP is more secure and has built-in ACID compliance.
 
