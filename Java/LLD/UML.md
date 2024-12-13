@@ -1,4 +1,15 @@
-1. private indicate with - public indicate with +
+Uml diagram is of two types of Structural and behavioral.
+Structural UML diagram - Code base id structured; Class diagram, pakage, component
+Behavioral UML diagram — How your system works and interacts. What all features are supported. Use-case diagram, Sequence, Activity  
+
+
+1. private indicate with - 
+   public indicate with + 
+   protected indicate with # 
+    static indicates with underline
+    Interface indicates by double arrow <<>>
+    Abstract indicates by italic
+    Imp repesents same as inheritance.
 2. **Relations**:
 3. **Association**: Objects are related but can exist independently.
 
@@ -33,3 +44,4 @@
 
     ![Dependency.PNG](../../resources/Dependency.PNG)
 9. **Realization**: A class implements the behavior defined by an interface.
+ 
