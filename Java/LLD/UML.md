@@ -1,0 +1,35 @@
+1. private indicate with - public indicate with +
+2. **Relations**:
+3. **Association**: Objects are related but can exist independently.
+
+    It's a has-a relationship, each object of one class is associated with one or more object of another class but can exist independently.
+
+    Like a Teacher has a Student.
+
+    ![Association.PNG](../../resources/Association.PNG)
+4.  **Aggregation**: A weak has-a relationship, where the contained objects can exist independently.
+
+    It's a weak form of association; where one class contains object of another class. However, the contained objects can exist independently of the container object.
+
+    The Department has a professor. where we have a list of professors in department class. Department and professor exist independently
+    
+    ![aggregation.PNG](../../resources/aggregation.PNG)
+5. **Composition**: A strong has-a relationship, where the contained objects cannot exist without the container.
+
+    Its Strong form of association; where one class own object of another class. If contained clas destroyed, then contained object are destroyed as well.
+
+    Example House and rooms. House class has-a rooms. but room can't exist without a house. that means if a house object destroyed then room object also be destroyed
+
+   ![composition.PNG](../../resources/composition.PNG)
+6. Example of aggregation and composition together.
+   Company teams employees --> Company and teams have composition relationship since of a company object detroyed then there is no significance of team object.
+                   Teams and Employees have Aggregation Relationship
+
+    ![compositionAggregation.PNG](../../resources/compositionAggregation.PNG)
+7. **Inheritance**—Its is-a relationship where subclass inherits properties and behavior of superclass
+
+    ![inheritancereprestation.png](../../resources/inheritancereprestation.png)
+8. **Dependency** - This is a relationship where one class relies on another class in some way. Ofter through method parameters, return type or temporary associations.
+
+    ![Dependency.PNG](../../resources/Dependency.PNG)
+9. **Realization**: A class implements the behavior defined by an interface.
