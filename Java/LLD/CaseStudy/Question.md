@@ -13,7 +13,7 @@
 13. How would you design a traffic light control system? 
 14. Design a cab booking system's backend. 
 15. How create a file system design? 
-16. Design an ATM machine system. 
+16. Design an ATM system. 
 17. How would you design a coffee machine system? 
 18. Design a shopping cart for an e-commerce app. 
 19. How create a notification system for different platforms? 
