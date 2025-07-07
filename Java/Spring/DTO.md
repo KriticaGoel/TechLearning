@@ -34,3 +34,44 @@ private String email;
 ```
 
 Create separate DTO for request and response
+
+
+### Model Mapper
+Step 1 : Dependency
+```xml
+<dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+```
+
+Step 2 : Create a object taht can handle by spring framework
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public ModelMapper getModelMapper(){
+        return new ModelMapper();
+    }
+}
+
+
+```
+
+Step 3: Calling
+```Java
+ private final UserRepository userRepository;
+    private final ModelMapper modelMapper;
+    public AuthServiceImpl(UserRepository userRepository,ModelMapper modelMapper) {
+        this.userRepository = userRepository;
+        this.modelMapper    = modelMapper;
+    }
+    @Override
+    public User signup(SignUpRequestDto name) {
+        
+        userRepository.save(modelMapper.map(name,User.class));
+        return null;
+    }
+```
