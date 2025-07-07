@@ -32,3 +32,5 @@ private String password;
 private String email;
 
 ```
+
+Create separate DTO for request and response
