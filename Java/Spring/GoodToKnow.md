@@ -112,3 +112,14 @@ User.withUsername("admin")
 ```
 
 Here, Spring understands that "admin123" is the actual raw password, without any encryption.
+
+    4. WHat are the different scope of dependency?
+
+| Scope    | Compile | Runtime | Test | Included in artifact | Typical Use Case            |
+| -------- | ------- | ------- | ---- | -------------------- | --------------------------- |
+| compile  | ✅       | ✅       | ✅    | ✅                    | Most libs your app needs    |
+| provided | ✅       | ❌       | ✅    | ❌                    | Servlet API, container libs |
+| runtime  | ❌       | ✅       | ❌    | ✅                    | DB drivers, logging         |
+| test     | ❌       | ❌       | ✅    | ❌                    | JUnit, Mockito              |
+| system   | ✅       | ✅       | ✅    | ❌                    | Local JARs                  |
+| import   | ✅       | ✅       | ✅    | ❌                    | BOM management              |
