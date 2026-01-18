@@ -225,13 +225,166 @@ Architects are judged by trade-off clarity, not perfect answers
 
 One page per system:
 
-Key decisions
+* Key decisions
+* Mistakes you made
+* What you’d change next time
 
-Mistakes you made
-
-What you’d change next time
-❌ 7 ⃣ Don’t Watch Too Many Video
+7️⃣ ❌ Don’t Watch Too Many Videos
 Design first → watch video → improve
+
+😰 “I Don’t Know This System” — EXACTLY What To Do & What NOT To Do
+
+    Not knowing a system is NORMAL.
+    Architects are judged on thinking, not prior knowledge.
+✅ WHAT YOU SHOULD DO (Step-by-Step Rescue Plan)
+
+1️⃣ DO NOT PANIC (Most Important)
+
+2️⃣ Start With a Generic System Skeleton (Always Works)
+
+    Client
+    ↓
+    Load Balancer
+    ↓
+    Service
+    ↓
+    Cache
+    ↓
+    Database
+
+Forget optimization.
+
+Ask:
+
+    “What is the simplest system that can satisfy the requirement?”
+
+Example:
+
+    Need to store data → Single DB
+    
+    Need to serve requests → Single service
+    
+    Need fast access → Basic cache
+
+3️⃣ Ask ONLY These 5 Questions (No More)
+
+Write answers quickly (even if rough):
+
+1. Who uses this system?
+2. What is the main action?
+3. Is it read-heavy or write-heavy?
+4. Is latency critical?
+5. Does data need to be consistent?
+
+This converts unknown → known.
+
+4️⃣ Ask the 4 Universal Pressure Questions
+
+Q1. What breaks first if traffic increases?
+
+    DB?    
+    Service?    
+    Network?
+
+Q2. What is more important here?
+
+    Consistency or Availability?    
+    Latency or Accuracy?
+
+Q3. What happens if this component fails?
+
+    Can we retry?    
+    Can we accept delay?    
+    Can we lose data?
+
+Q4. Which operation happens most?
+
+    Read or Write?
+
+5️⃣  Reduce the Problem Scope (Very Important)
+
+You are NOT designing the full product.
+
+Say:
+
+    “I’ll design the core MVP flow first.”
+
+Example:
+
+    Chat system → send & receive messages only
+    
+    Uber → matching rider to driver only
+    
+    YouTube → upload + watch video only
+
+Interviewers LOVE this.
+
+6️⃣  Reuse Patterns You Already Know
+
+You are allowed to say:
+
+    “This is similar to X system I designed earlier”
+    
+    “I’ll reuse the same caching approach”
+
+Architecture is pattern reuse, not invention.
+
+7️⃣ Make Reasonable Assumptions (Say Them Clearly)
+
+If unsure, say:
+
+    “I’ll assume 10M users and read-heavy traffic.”
+
+Making assumptions is a strength, not weakness.
+
+8 Move Forward Even If Design Is Imperfect
+
+Never freeze.
+
+Bad design > No design
+You can refine later.
+
+
+### Use “DEFAULT SAFE CHOICES” (Very Important)
+
+When unsure, use industry-default assumptions.
+
+
+| Problem               | Default Safe Choice  |
+|-----------------------|----------------------|
+| Need scale            | Horizontal scaling   |
+| Fast reads            | Cache (Redis)        |
+| Async work            | Message queue        |
+| Uncertain consistency | Eventual consistency |
+| Growth expected       | Sharding later       |
+
+
+### Use These 5 Universal Trade-offs
+
+You can ALWAYS use one of these:
+
+1. Performance vs Consistency
+2.Simplicity vs Scalability
+3.Availability vs Accuracy
+4.Latency vs Cost
+5.Speed of delivery vs Long-term flexibility
+
+
+
+
+🔁 After You’re Stuck — How to Recover (Very Important)
+
+After the session:
+
+1.  Watch 1 good explanation
+
+2. Compare with your design
+
+3. Write 3 improvements only
+
+4. Redraw next day (5–10 minutes)
+
+This is where confidence grows fastest.
 
 🏆 How You’ll Know You’re Confident
 
