@@ -32,7 +32,16 @@ Identify potential performance bottlenecks and discuss trade-offs in design deci
 
 ⏱️ Daily 60-Minute HLD Practice Schedule (Repeat Daily)
 
-![img.png](img.png)
+| ⏱️ Time (min) | Task                            | What to do                                                                                                                                                                        | Example                                                                                                            | 🎯 Skill built                          |
+|---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|-----------------------------------------|
+| 0-5           | Requirement Thinking Warm-up    | Read the system name <br/>Write:<br/>3 Functional Requirements<br/>3 Non-Functional Requirement                                                                                   | System: URL Shortener <br/>FR: shorten URL, redirect, analytics <br/>NFR: low latency, high availability, scalable | Asking correct questions first          |
+| 5-15          | Scale & Constraints             | Estimate: <br/>DAU / QPS <br/>Read vs Write ratio <br/>Storage per day/year <br/>Use rough numbers (no perfection needed)                                                         |                                                                                                                    | Capacity planning confidence            |
+| 15-30         | High-Level Architecture Diagram | Draw boxes: Client -> Load Balancer ->Services ->Cache->DB ->Queue (if needed)<br/> Draw arrows (data flow)                                                                       |                                                                                                                    | Clear system visualization              |
+| 30-40         | Data Model + APIs               | Design main tables/collections <br/>Define 2–3 core APIs                                                                                                                          | POST /shorten <br/>GET /{code}                                                                                     | Translating business → technical design |
+| 40-50         | Scaling, Reliability & Failures | **Ask** <br/>What breaks first? <br/>Where do I scale? <br/>What happens if DB/cache goes down?<br/>**Add:** <br/>Replicas <br/>Shards <br/>Retry <br/>logic <br/>Circuit breaker |                                                                                                                    | Real-world robustness thinking          |
+| 50-60         | Trade-offs + Summary            | 2 design trade-offs <br/>1 improvement if traffic grows 10×                                                                                                                       | Trade-off: Eventual consistency for availability <br/>Improvement: Add CDN for hot reads                           | Architect-level communication           |
+
+
 
 ✅ 2-Month HLD Plan
 
