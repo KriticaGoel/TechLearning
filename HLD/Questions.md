@@ -249,19 +249,21 @@ Answer: 1. Traffic Pattern:
 
 17. How does a load balancer improve security?
 
-Answer: 1. DDoS Protection
+Answer: 
+
+1. **DDoS Protection**
 
 ○ Detects and blocks malicious traffic spikes.
 
 ○ Some hardware load balancers provide built-in DDoS mitigation.
 
-2. SSL Termination
+2. **SSL Termination**
  
     ○ Offloads SSL decryption from backend servers.
 
     ○ Ensures secure connections with HTTPS.
 
-3. Access Control
+3. **Access Control**
  
     ○ Restricts access using firewalls and IP whitelisting.
 
