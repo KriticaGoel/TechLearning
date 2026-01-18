@@ -1,6 +1,5 @@
-.
-
-🧠 How to Think About HLD (First – Very Important)
+# High-Level Design (HLD) Mastery Roadmap
+### 🧠 How to Think About HLD (First – Very Important)
 
 Every system design follows the same mental framework:
 
@@ -14,23 +13,24 @@ Every system design follows the same mental framework:
 8. Failure handling
 9. Trade-offs
 
-# 1. Requirements (functional + non-functional)
+
+1. Requirements (functional + non-functional)
 Define what the system should do (functional requirements) and how well it should perform (non-functional requirements).
-# 2. Traffic & Scale Estimation
+2. Traffic & Scale Estimation
 Estimate the expected load on the system, including user base, requests per second, data storage needs
-# 3. Core Components
+3. Core Components
 Identify the main building blocks of the system, such as databases, servers, load balancers,
 caches, and message queues.
-# 4. Data Model
+4. Data Model
 Design the structure of the data, including how it will be stored, accessed, and managed.
-# 5. APIs
+5. APIs
 Define the interfaces through which different components of the system will communicate.
-# 6. Scaling & Reliability
+6. Scaling & Reliability
 Plan for how the system will handle increased load and ensure high availability.
-# 7. Bottlenecks & Trade-offs
+7. Bottlenecks & Trade-offs
 Identify potential performance bottlenecks and discuss trade-offs in design decisions.
 
-⏱️ Daily 60-Minute HLD Practice Schedule (Repeat Daily)
+### ⏱️ Daily 60-Minute HLD Practice Schedule (Repeat Daily)
 
 | ⏱️ Time (min) | Task                            | What to do                                                                                                                                                                        | Example                                                                                                            | 🎯 Skill built                          |
 |---------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|-----------------------------------------|
@@ -43,7 +43,7 @@ Identify potential performance bottlenecks and discuss trade-offs in design deci
 
 
 
-✅ 2-Month HLD Plan
+### ✅ 2-Month HLD Plan
 
 🟩 WEEK 1 (Days 1–7) — HLD Foundations
 
@@ -196,7 +196,7 @@ Day 55: Whiteboard / verbal practice
 
 Day 56: Final Review & Self-Assessment
 
-🎯 Optional Add-on
+### 🎯 Optional Add-on
 
 🔹15-minute Add-on (2–3 days/week)
 
@@ -208,7 +208,7 @@ Feed ranking logic
 
 Leaderboard optimization
 
-✅ WHAT YOU SHOULD DO (Very Important)
+### ✅ WHAT YOU SHOULD DO (Very Important)
 
 1️⃣ Follow the SAME 60-Minute Structure Daily (No Skipping)
 
@@ -220,11 +220,11 @@ Leaderboard optimization
 
 Every design must include at least 2 trade-offs.
 
-Example:
-
-“Using cache increases complexity but reduces DB load”
-
-“Eventual consistency improves availability”
+    Example:
+    
+    “Using cache increases complexity but reduces DB load”
+    
+    “Eventual consistency improves availability”
 
 Architects are judged by trade-off clarity, not perfect answers
 
@@ -241,7 +241,7 @@ One page per system:
 7️⃣ ❌ Don’t Watch Too Many Videos
 Design first → watch video → improve
 
-😰 “I Don’t Know This System” — EXACTLY What To Do & What NOT To Do
+### 😰 “I Don’t Know This System” — EXACTLY What To Do & What NOT To Do
 
     Not knowing a system is NORMAL.
     Architects are judged on thinking, not prior knowledge.
@@ -373,15 +373,15 @@ When unsure, use industry-default assumptions.
 You can ALWAYS use one of these:
 
 1. Performance vs Consistency
-2.Simplicity vs Scalability
-3.Availability vs Accuracy
-4.Latency vs Cost
-5.Speed of delivery vs Long-term flexibility
+2. Simplicity vs Scalability
+3. Availability vs Accuracy
+4. Latency vs Cost
+5. Speed of delivery vs Long-term flexibility
 
 
 
 
-🔁 After You’re Stuck — How to Recover (Very Important)
+### 🔁 After You’re Stuck — How to Recover (Very Important)
 
 After the session:
 
@@ -395,13 +395,18 @@ After the session:
 
 This is where confidence grows fastest.
 
-🏆 How You’ll Know You’re Confident
+#### 🏆 How You’ll Know You’re Confident
 
 You can:
+
 ✅ Start design without fear
+
 ✅ Ask correct questions first
+
 ✅ Draw clean diagrams
+
 ✅ Explain trade-offs clearly
+
 ✅ Adapt design when requirements change
 
 
