@@ -74,19 +74,13 @@ Here we are casting at compile time, so compile time valiation will work.
 ### Generic Method
 
 ```java
-public class Pair<K, V> {
-    private K key;
-    private V value;
-
-    public void setKey(K key) {
-        this.key = key;
-    }
-
-    public K getKey() {
-        return key;
-    }
-
+public <K, V> void doSomething(K key, V value) {
+    System.out.println("key: " + key + " value: " + value);
 }
+
+GenericMethod gm= new GenericMethod();
+        gm.doSomething(123,"ABC");
+        gm.doSomething("Hello", 456);
 ```
 
 ### Generic Static Method
