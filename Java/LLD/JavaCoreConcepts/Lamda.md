@@ -1,49 +1,58 @@
 ### Agenda
 
-- [Lambdas](#Lambdas)
-- Functional Interfaces
-- Lambdas Expressions
-    - Motivation
-    - Examples
-        - Runnable
-        - Addition
-        - Passing Lambdas as Arguments
+- [Lambdas](#Definition)
+- [Functional Interfaces](#Functional-Interfaces)
+- [Lambdas Expressions](#Lambdas-Expressions)
+- [Syntax](#Syntax)
+- Implementation Examples 
+        - Replacement of big code with Lambdas
+        - Passing arguments to Lambdas
+        - Lambda Expressions with Parameters
         - Lambdas in Collections
         - Sorting Example
 
-### Lambdas
+#### 🔹 Key Concepts:
+Lambda
+Functional Interfaces
 
-> A lambda expression is a block of code that gets passed around, like an anonymous method. It is a way to pass behavior
-> as an argument to a method invocation and to define a method without a name.
+#### 🔹 Definition :
+A lambda expression is a block of code that gets passed around, like an anonymous method. It is a way to pass behavior
+as an argument to a method invocation and to define a method without a name.
 
 
-**Functional Interfaces**
+#### 🔹 Functional Interfaces
 A functional interface is an interface that contains one and only one abstract method. It is a way to define a contract
 for behavior as an argument to a method invocation
 
-**Lambda expressions**
+### Lambda Expressions
 It has also known as anonymous functions, which provide a way to write a code in more compact form.
 
 The basic syntax of a lambda expression consists of the parameter list, the arrow (->), and the body. The body can be
 either an expression or a block of statements.
+
+#### 🔹 Syntax of Lambda Expressions:
 
 ```
 (parameters) -> expression
 (parameters) -> { statements }
 ```
 
-**Parameter List:**  This represents the parameters passed to the lambda expression. It can be empty or contain one or
+**Parameter List**
+This represents the parameters passed to the lambda expression. It can be empty or contain one or
 more parameters enclosed in parentheses. If there's only one parameter and its type is inferred, you can omit the
 parentheses.
 
-**Arrow Operator (->):** This separates the parameter list from the body of the lambda expression.
+**Arrow Operator (->):** 
+This separates the parameter list from the body of the lambda expression.
 
-**Lambda Body:** This contains the code that makes up the implementation of the abstract method of the functional
+**Lambda Body:** 
+This contains the code that makes up the implementation of the abstract method of the functional
 interface. The body can be a single expression or a block of code enclosed in curly braces.
 
 Lambda expressions are most commonly used with functional interfaces, which are interfaces containing only one abstract
 method. Java 8 introduced the @FunctionalInterface annotation to mark such interfaces.
 
+#### 🔹 Syntax of Functional Interface:
 ```
 @FunctionalInterface
 interface MyFunctionalInterface {
@@ -119,7 +128,7 @@ Using Lambda expression
 NumberChecker lambdaChecker = number -> number % 2 == 0;
 ```
 
-### 4. Lambda Expressions in Collections
+#### 4. Lambda Expressions in Collections
 
 Lambda expressions are commonly used with collections for concise iteration and processing.
 
@@ -132,9 +141,7 @@ List<String> fruits = Arrays.asList("Apple", "Banana", "Orange", "Mango");
 List<String> filteredTraditional = new ArrayList<>();
 for(
 String fruit :fruits){
-        if(fruit.
-
-startsWith("A")){
+        if(fruit.startsWith("A")){
         filteredTraditional.
 
 add(fruit);
@@ -158,14 +165,8 @@ Method references to provide a shorthand notation for lambda expressions, making
 List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
 
 // Lambda expression for sorting
-Collections.
-
-sort(names, (a, b) ->a.
-
-compareTo(b));
+Collections.sort(names, (a, b) ->a.compareTo(b));
 
 // Method reference for sorting
-        Collections.
-
-sort(names, String::compareTo);
+        Collections.sort(names, String::compareTo);
 ```
