@@ -1,6 +1,6 @@
 ### Agenda
 
-- Lambdas
+- [Lambdas](#Lambdas)
 - Functional Interfaces
 - Lambdas Expressions
     - Motivation
