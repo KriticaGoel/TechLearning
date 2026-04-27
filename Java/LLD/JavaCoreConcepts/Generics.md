@@ -6,6 +6,12 @@
 * [Extends keyword in Generics](#extends-keyword-in-generics)
 * [Function Interface](#function-interface)
 
+#### 🔹 Quick Revision :
+
+1. what is generics?
+2. How many types?
+3. what problem its resolved?
+4. Real use case of generics?
 
 #### 🔹 Definition :
 
