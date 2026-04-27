@@ -94,16 +94,14 @@ Stream<String> cityStream = Arrays.stream(cities);
 ```java
 IntStream intStream = IntStream.rangeClosed(1, 5);
 // Creating a stream of integers
-intStream.
-
-forEach(System.out::println); // Output: 1 2 3 4 5
+intStream.forEach(System.out::println); // Output: 1 2 3 4 5
 ```
 
 ### 2. Intermediate Operations
 
 Intermediate operations are operations that transform a stream into another stream. They are lazy, meaning they don't
 execute until a terminal operation is invoked. There are two types of operations that you can perform on a stream:
-Some examples of intermediate operations are filter(), map(), sorted(), distinct(), limit(), and skip().
+Some examples of intermediate operations are **filter(), map(), sorted(), distinct(), limit(), and skip().**
 
 Filtering and Mapping Example:
 
@@ -116,9 +114,7 @@ List<String> result = fruits.stream()
         .map(String::toUpperCase)
         .collect(Collectors.toList());
 
-System.out.
-
-println(result); // Output: [APPLE]
+System.out.println(result); // Output: [APPLE]
 ```
 
 **Filtering**
@@ -205,13 +201,33 @@ Stream<Integer> stream = Stream.of(5, 3, 1, 4, 2);
 Stream<Integer> sortedNumbers = stream.sorted(comparator);
 ```
 
+**limit**
+The limit() method is used to limit the number of elements in a stream. It takes an integer as an argument and returns a
+stream that contains only the first n elements of the stream. For example, let's limit a stream of numbers to the first 3
+elements:
+```
+Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5);
+Stream<Integer> limitedNumbers = stream.limit(3);
+output : 1,2,3
+```
+
+**skip**
+The skip() method is used to skip the first n elements in a stream. It takes an integer as an argument and returns a
+stream that contains only the elements after the first n elements of the stream. For example, let's skip the first 2 elements in a stream of numbers:
+
+```java
+Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5);
+Stream<Integer> skippedNumbers = stream.skip(2);
+output : 3,4,5
+```
+
 ### 3. Terminal operations
 
 Terminal operations trigger the processing of elements and produce a result or a side effect. They are the final step in
 a stream pipeline. They are eager, which means that they are executed immediately. Some examples of terminal operations
 are
-forEach(), count(), collect(), reduce(), min(), max(), anyMatch(), allMatch(), and
-noneMatch().
+**forEach(), count(), collect(), reduce(), min(), max(), anyMatch(), allMatch(), and
+noneMatch().**
 
 **Iterating**
 The forEach() method is used to iterate over the elements in a stream. It takes a consumer as an argument and invokes
@@ -219,11 +235,7 @@ the consumer for each element in the stream. For example, let's iterate over a s
 
 ```java
 Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5);
-stream.
-
-forEach(number ->System.out.
-
-println(number));
+stream.forEach(number ->System.out.println(number));
 ```
 
 **Reducing**
