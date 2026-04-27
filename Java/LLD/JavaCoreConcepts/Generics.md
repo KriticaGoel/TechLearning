@@ -334,3 +334,107 @@ class ApiService<T> {
     - Am I repeating same logic?
 
    ### Step 3: Refactor to generic
+
+
+Generic Class
+without generic
+
+```java
+public class WIthoutGeneric {
+
+    public static void main(String[] args) {
+
+        sum(10,20);
+        sumDouble(10.20,20.10);
+
+    }
+
+    static void sum(int a, int b){
+        System.out.println("The sum of two integers is: " + (a + b));
+
+    }
+
+    static void sumDouble(Double a, Double b){
+        System.out.println("The sum of two double is: " + (a + b));
+    }
+}
+```
+
+With generic
+
+```java
+public class Generic101 {
+
+    public static void main(String[] args) {
+        SumGeneric<Integer,Integer> sumInteger = new SumGeneric<>(10,20);
+        sumInteger.sum();
+       // System.out.printf("The sum of integer %s,%s is %s ",sumInteger.getFirstObject(),sumInteger.getSecondObject(),sumInteger.getSecondObject()+sumInteger.getFirstObject());
+        SumGeneric<Double,Double> sumDouble = new SumGeneric<>(10.20,20.10);
+        sumDouble.sum();
+    }
+}
+
+public class SumGeneric<F,S> {
+    F firstObject;
+    S secondObject;
+
+    public SumGeneric(F firstObject, S secondObject) {
+        this.firstObject = firstObject;
+        this.secondObject = secondObject;
+    }
+
+    public F getFirstObject() {
+        return firstObject;
+    }
+
+    public S getSecondObject(){
+        return secondObject;
+    }
+
+    public void sum(){
+        if(firstObject instanceof Integer && secondObject instanceof Integer){
+            System.out.println("The sum of two integers is: " + ((Integer)firstObject + (Integer)secondObject));
+        }else if(firstObject instanceof Double && secondObject instanceof Double){
+            System.out.println("The sum of two double is: " + ((Double)firstObject + (Double)secondObject));
+        }else{
+            System.out.println("Unsupported types for summation.");
+        }
+    }
+}
+```
+GENEtic Method
+
+```java
+```java
+public static void main(String[] args) {
+        // calling Generic method defined in GenericMethod class
+        GenericMethod gm = new GenericMethod();
+        gm.display(123, "ABC");
+        gm.display("Hello", 456);
+        
+         dosomething("Kritica");
+        dosomething(100);
+
+    }
+    
+    public static <T> T dosomething(T input){
+        System.out.printf("The value of input is: %s %n",input);
+        return input;
+    }
+```
+
+```java
+public class GenericMethod {
+
+    public <K, V> void display(K key, V value) {
+        System.out.println("Key: " + key + ", Value: " + value);
+    }
+    
+    //With generic return type
+     public <K, V,T> T display(K key, V value) {
+        System.out.println("Key: " + key + ", Value: " + value);
+        return null; // Just for demonstration, you can return any type as needed
+    }
+}
+
+```
