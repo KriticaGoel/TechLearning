@@ -438,3 +438,26 @@ public class GenericMethod {
 }
 
 ```
+
+Give me 10 practise qustions on generics:
+Give me 10 practice questions on Generics:
+
+1\. Create a generic class `Box<T>` with methods `set(T value)` and `get()`. Demonstrate usage with `Integer` and `String`.
+
+2\. Write a generic method `<T> void printArray(T[] arr)` that prints elements of any array type.
+
+3\. Build a generic `Pair<K, V>` class and write a program to store and print student name\-id pairs.
+
+4\. Create a method `<T extends Number> double add(T a, T b)` and test it with `Integer`, `Double`, and `Float`.
+
+5\. Write a function that accepts `List<? extends Users>` and prints all user names. Explain why `List<Instructor>` works here.
+
+6\. Write a function that accepts `List<? super Instructor>` and adds new `Instructor` objects. Explain why this is useful.
+
+7\. Refactor a non\-generic repository class into `Repository<T>` with `save(T entity)` and `findById(int id)` methods.
+
+8\. Create a generic static utility method `<T> T getFirst(List<T> list)` that returns the first element safely.
+
+9\. Implement a generic interface `Converter<I, O>` with method `O convert(I input)`, then create two implementations.
+
+10\. Compare `List<Object>`, `List<?>`, and `List<? extends Number>` using small examples and write what operations are allowed in each.
