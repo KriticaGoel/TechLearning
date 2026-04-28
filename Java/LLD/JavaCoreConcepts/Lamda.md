@@ -5,7 +5,7 @@
 - [Lambdas Expressions](#Lambdas-Expressions)
 - [Syntax](#Syntax)
 - Implementation Examples 
-        - Replacement of big code with Lambdas
+        - Convert Anonymous Class to Lambda
         - Passing arguments to Lambdas
         - Lambda Expressions with Parameters
         - Lambdas in Collections
@@ -64,7 +64,7 @@ interface MyFunctionalInterface {
 
 Let's start with some simple examples to illustrate the basic syntax:
 
-#### 1. Hello World Runnable
+#### 1. Given a Runnable implemented using an anonymous class, rewrite it using a lambda expression.
 
 To understand, the motivation behind lambdas, remember how we create a thread in Java. We create a class that implements
 the Runnable interface and override the run() method. Then we create a new instance of the class and pass it to the
@@ -149,7 +149,9 @@ add(fruit);
             }
 ```
 
-Using Lambda expression & Java Stream API
+Using Lambda expression & Java Stream API -Replace Traditional Loop Filter
+Using a List<Integer>, replace a for loop that collects even numbers with stream\(\).filter\(\) and lambda.
+
 
 ```java
 List<String> filteredLambda = fruits.stream()
@@ -157,7 +159,14 @@ List<String> filteredLambda = fruits.stream()
         .collect(Collectors.toList());
 ```
 
-### 4. Sorting Example
+### 4. Sort with Lambda
+
+Sort a List<String> by:
+
+
+natural order
+length of string
+using lambda comparators.
 
 Method references to provide a shorthand notation for lambda expressions, making the code even more concise.
 
@@ -170,3 +179,62 @@ Collections.sort(names, (a, b) ->a.compareTo(b));
 // Method reference for sorting
         Collections.sort(names, String::compareTo);
 ```
+### 5. Build a Functional Interface
+Create a @FunctionalInterface named StringTransformer with one method, then implement:
+
+
+uppercase conversion
+reverse string
+using lambdas.
+
+
+(5) Use forEach Instead of Loop
+Print all elements of a list using forEach and lambda instead of a traditional for loop.
+
+
+(6) Map and Transform
+Given List<String> names, return a new list with all names in lowercase using stream\(\).map\(\).
+
+(8) Function Chaining
+Use Function<Integer, Integer> lambdas to:
+
+
+square a number
+add 10
+Then chain using andThen.
+
+(9) Custom Calculator
+Create a MathOperation functional interface and implement add, subtract, multiply, divide using lambdas.
+
+(10) Method Reference Refactor
+Refactor lambda expressions to method references where possible (e.g., String::trim, Integer::parseInt).
+
+
+
+#### Predicate Practice
+Create lambdas for:
+is even
+is positive
+is multiple of 5
+Then test numbers using Predicate<Integer>.
+
+### How to make lambda a habit (and reduce traditional style)
+Prefer java.util.function types first: Predicate, Function, Consumer, Supplier.
+
+For collection tasks, think in this order: stream -> filter/map/sorted -> collect.
+
+Refactor one old loop daily into stream+lambda.
+
+During code review, reject unnecessary anonymous classes for SAM interfaces.
+
+Keep lambdas short (one responsibility).
+
+Use method references when lambda only calls one method.
+
+Practice with small katas (filtering, sorting, grouping) for 15 minutes daily.
+
+Learn common patterns: filter, map, reduce, anyMatch, allMatch.
+
+Avoid overuse: use traditional code when logic becomes unclear.
+
+Set a personal rule: if interface has one abstract method, try lambda first.
