@@ -237,6 +237,13 @@ the consumer for each element in the stream. For example, let's iterate over a s
 Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5);
 stream.forEach(number ->System.out.println(number));
 ```
+**count**
+The count() method is used to count the number of elements in a stream. It returns the count as a long value. For example, let's count the number of even numbers in a stream of numbers:
+
+```java
+System.out.println(stream.count());
+```
+
 
 **Reducing**
 The reduce() method is used to reduce the elements in a stream to a single value. It takes an identity value and a
