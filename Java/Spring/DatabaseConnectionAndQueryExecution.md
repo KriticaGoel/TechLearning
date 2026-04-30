@@ -177,7 +177,7 @@ public class User {
 ```
 4. Repository Layer
 
---READ (single)
+--READ (single)  -> queryForObject
 ```java
 public Users findById(String id) {
 
@@ -195,4 +195,45 @@ public Users findById(String id) {
     return jdbcTemplate.queryForObject(sql, params,rowMapper);
 
 }
+```
+--READ (List)  -> query
+```java
+ public List<Users> findAll(){
+        String sql ="Select * from Users";
+
+        RowMapper<Users> rowMapper =(rs,rowNum)->{
+            Users u= new Users();
+            u.setId(rs.getInt("id"));
+            u.setName(rs.getString("name"));
+            u.setEmail(rs.getString("email"));
+            return u;
+        };
+
+        return jdbcTemplate.query(sql,new Object[]{},rowMapper);
+    }
+```
+
+--Create -> update()
+```java
+public int insertUser(String name,String email){
+        String sql="insert into users(name,email) values(?,?)";
+        return jdbcTemplate.update(sql,name,email);
+    }
+```
+
+--Update -> update()
+```java
+public int updateUser(String name, String email){
+        String sql ="update Users set email=? where ucase(name)=?";
+        return jdbcTemplate.update(sql,email,name.toUpperCase());
+    }
+```
+
+-Delete -> update()
+```java
+ public int deleteUser(String name){
+        String sql="Delete fromUsers where ucase(name)=?";
+        return jdbcTemplate.update(sql,name.toUpperCase());
+
+    }
 ```
