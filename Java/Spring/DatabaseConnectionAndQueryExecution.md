@@ -1,11 +1,11 @@
 # Agenda
 1. [Comparison of Approaches](#comparison-of-database-connection-and-query-execution-approaches-in-spring)
 2. [Real-World Recommendation](#real-world-recommendation-senior-level-thinking)
-3. Implementation JDBC
-4. Implementation JdbcTemplate
+3. [Implementation JDBC](#implementation-jdbc)
+4. [Implementation JdbcTemplate](#implementation-jdbctemplate)
+5. [Implementation NamedParameterJdbcTemplate](#implementation-namedparameterjdbctemplate)
 5. Implementation JPA
-6. Implementation Hibernate
-7. Implementation NamedParameterJdbcTemplate
+6. Implementation Hibernate7. 
 8. Implementation Spring Data JDBC
 9. Implementation jOOQ
 10. Implementation R2DBC
@@ -13,6 +13,12 @@
 12. Multiple database connections and transactions
 
 ### Comparison of Database Connection and Query Execution Approaches in Spring
+
+JDBC → manual
+JdbcTemplate → simple SQL
+JPA → easy but slower
+jOOQ → complex SQL
+R2DBC → reactive
 
 | **Approach** | **Performance** | **Control** | **Complexity** | **Best Use Case** | **How it work**                                 | ** Core Concept**         |
 |---|---|---|---|---|-------------------------------------------------|---------------------------|
@@ -237,3 +243,65 @@ public int updateUser(String name, String email){
 
     }
 ```
+
+### Implementation NamedParameterJdbcTemplate
+
+* Powerful if we have model/DTO
+* Spring uses: BeanPropertySqlParameterSource Its maps ->Java field → SQL named parameter
+* Example : user.getName() → :name
+* Important Rules
+  * Field names must match SQL params
+  * keep everything lowercase in SQL
+  * In case of missing field :age -> Run time Error
+  * Use Map for Dynamic Query or SImple static Query
+  * **BeanPropertySqlParameterSource does NOT automatically flatten nested objects like address.city use Custom ParameterSource**
+
+Flatten DTO means no nested DTO mention all field in single class
+```java 
+public class UserDTO {
+    private Long id;
+    private String name;
+    private String city;
+    private String country;
+}
+```
+
+Repeated logic ->	Custom ParameterSource
+
+Clean architecture ->	Flatten DTO ✅
+
+Dependency, Database Configuration and Model class, Controller, Service remain same as JDBC Template
+
+4. Repository
+
+    **Create using Map** 
+    ```java
+    public int createUserMap(UserRequest user) {
+        String sql = "insert into users(name,email) values (:name,:email)";
+
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("name", user.getName());
+        params.put("email", user.getEmail());
+
+        return namedParameterJdbcTemplate.update(sql, params);
+
+    }
+   ```
+
+    **Create using BeanPropertySqlParameterSource**
+    BeanPropertySqlParameterSource -> Its map Java field → SQL named parameter
+
+    Create DTO
+    ```java9
+   public class UserRequest {
+
+    private String name;
+    private String email;
+    }
+    ```
+   ```java 
+   public int createUser(UserRequest user) {
+        String sql = "Insert into Users(name,email) values(:name,:email)";
+        return namedParameterJdbcTemplate.update(sql, new BeanPropertySqlParameterSource(user));
+    } 
+   ```
